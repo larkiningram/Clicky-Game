@@ -24,7 +24,12 @@ class App extends React.Component {
       }
       else if (friend.id === id && friend.clicked === true) {
         alert("you wrong")
+        if (currentScore > highScore) {
+          highScore = currentScore
+          // return highScore
+        }
         currentScore = 0;
+
       }
       return friend
     })
