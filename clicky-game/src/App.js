@@ -67,7 +67,7 @@ class App extends React.Component {
                 image={friend.image}
                 click={this.clicker}
                 clicked={friend.clicked}
-                shuffle={this.shufflec}
+                shuffle={this.shuffle}
                 id={friend.id}
               />
             )
