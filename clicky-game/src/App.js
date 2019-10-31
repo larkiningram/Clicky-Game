@@ -26,10 +26,9 @@ class App extends React.Component {
         alert("you wrong")
         if (currentScore > highScore) {
           highScore = currentScore
-          // return highScore
         }
         currentScore = 0;
-
+        this.gameOver()
       }
       return friend
     })
@@ -40,12 +39,20 @@ class App extends React.Component {
 
   shuffle = id => {
     this.setState({
-        friends: this.state.friends.sort(function(a,b){
-                return 0.5 - Math.random();
-            }
-        )
+      friends: this.state.friends.sort(function (a, b) {
+        return 0.5 - Math.random();
+      }
+      )
     })
-}
+  }
+
+  gameOver = () => {
+    const friends = this.state.friends.map(friend => {
+      friend.clicked = false;
+      return friend
+    })
+    this.setState({ friends })
+  }
 
   render() {
     return (
@@ -79,7 +86,7 @@ class App extends React.Component {
           })
         }
 
-      </Wrapper>
+      </Wrapper >
     );
   }
 
