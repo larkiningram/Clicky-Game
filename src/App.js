@@ -56,7 +56,7 @@ class App extends React.Component {
     this.setState({ friends })
   }
 
-  shuffle = id => {
+  shuffle = () => {
     this.setState({
       friends: this.state.friends.sort(function (a, b) {
         return 0.5 - Math.random();
