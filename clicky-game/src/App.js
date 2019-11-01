@@ -4,9 +4,24 @@ import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import "./App.css";
 // import Navbar from "./components/Navbar";
+// import Header from "./components/Header/Header";
 
 let currentScore = 0;
 let highScore = 0;
+
+const styles = {
+  navbarStyle: {
+      background: "black",
+      color: "white",
+      width: "100%",
+      height: "20%"
+  },
+  navElements: {
+    justifyContent: "center",
+    width: "100%",
+    fontSize: "32px"
+  }
+};
 
 class App extends React.Component {
 
@@ -27,7 +42,11 @@ class App extends React.Component {
         if (currentScore > highScore) {
           highScore = currentScore
         }
-        currentScore = 0;
+        this.gameOver()
+      }
+      if (currentScore === 12) {
+        alert("you won")
+        highScore = 12
         this.gameOver()
       }
       return friend
@@ -51,17 +70,18 @@ class App extends React.Component {
       friend.clicked = false;
       return friend
     })
+    currentScore = 0;
     this.setState({ friends })
   }
 
   render() {
     return (
       <Wrapper>
-        <div className="row">
-          <nav className="navbar">
-            <div className="col-md-4">
+        <div className="row" style={styles.navbarStyle}>
+          <nav className="navbar"  style={styles.navElements}>
+            {/* <div className="col-md-4">
               <a href="/">Clicky Game</a>
-            </div>
+            </div> */}
             <div className="col-md-4">
               <p>Click on an image to play</p>
             </div>
@@ -70,6 +90,7 @@ class App extends React.Component {
             </div>
           </nav>
         </div>
+        {/* <Header /> */}
         {
           this.state.friends.map((friend) => {
             return (

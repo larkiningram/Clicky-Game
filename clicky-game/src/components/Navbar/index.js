@@ -11,7 +11,8 @@ import "./style.css";
 const styles = {
     navbarStyle: {
         background: "green",
-        justifyContent: "flex-end"
+        justifyContent: "flex-end",
+        width: "100%"
     }
 };
 
