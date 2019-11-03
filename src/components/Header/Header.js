@@ -8,11 +8,15 @@ import React from "react";
 
 const styles = {
     head: {
-        background: "great",
+        background: "black",
         width: "100%",
-        height: "20%"
+        height: "12%",
+        color: "white"
     },
     headtext: {
+        // width: "80%",
+        marginRight: "10%",
+        marginLeft: "10%",
         justifyContent: "center",
         alignItems: "center"
     }
@@ -23,7 +27,7 @@ const styles = {
 function Header() {
     return (
         <div style={styles.head}>
-            <h1 style={styles.headtext}>this is the clicky game</h1>
+            <h3 style={styles.headtext}>Click on a picture to start. If you click on the same picture more than once you lose!</h3>
         </div>
     );
 }

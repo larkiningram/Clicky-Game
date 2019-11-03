@@ -4,7 +4,7 @@ import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import "./App.css";
 // import Navbar from "./components/Navbar";
-// import Header from "./components/Header/Header";
+import Header from "./components/Header/Header";
 
 let currentScore = 0;
 let highScore = 0;
@@ -19,7 +19,7 @@ const styles = {
   navElements: {
     justifyContent: "center",
     width: "100%",
-    fontSize: "32px"
+    fontSize: "36px"
   }
 };
 
@@ -79,18 +79,15 @@ class App extends React.Component {
       <Wrapper>
         <div className="row" style={styles.navbarStyle}>
           <nav className="navbar"  style={styles.navElements}>
-            {/* <div className="col-md-4">
-              <a href="/">Clicky Game</a>
-            </div> */}
             <div className="col-md-4">
-              <p>Click on an image to play</p>
+              <h1>Clicky Game</h1>
             </div>
             <div className="col-md-4">
               <p>score: {currentScore} | high score: {highScore}</p>
             </div>
           </nav>
         </div>
-        {/* <Header /> */}
+        <Header />
         {
           this.state.friends.map((friend) => {
             return (
